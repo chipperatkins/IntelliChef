@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043B5AE01E456C01007A6581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5ADF1E456C01007A6581 /* AppDelegate.swift */; };
-		043B5AE21E456C01007A6581 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5AE11E456C01007A6581 /* ViewController.swift */; };
-		043B5AE51E456C01007A6581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5AE31E456C01007A6581 /* Main.storyboard */; };
-		043B5AE71E456C01007A6581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043B5AE61E456C01007A6581 /* Assets.xcassets */; };
-		043B5AEA1E456C01007A6581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5AE81E456C01007A6581 /* LaunchScreen.storyboard */; };
+		043B5B201E4589E8007A6581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B1F1E4589E8007A6581 /* AppDelegate.swift */; };
+		043B5B221E4589E8007A6581 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B211E4589E8007A6581 /* MasterViewController.swift */; };
+		043B5B241E4589E8007A6581 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B231E4589E8007A6581 /* DetailViewController.swift */; };
+		043B5B271E4589E9007A6581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B251E4589E9007A6581 /* Main.storyboard */; };
+		043B5B291E4589E9007A6581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B281E4589E9007A6581 /* Assets.xcassets */; };
+		043B5B2C1E4589E9007A6581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B2A1E4589E9007A6581 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		043B5ADC1E456C01007A6581 /* IntelliChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelliChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		043B5ADF1E456C01007A6581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		043B5AE11E456C01007A6581 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		043B5AE41E456C01007A6581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		043B5AE61E456C01007A6581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		043B5AE91E456C01007A6581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		043B5AEB1E456C01007A6581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		043B5B1C1E4589E8007A6581 /* IntelliChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelliChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		043B5B1F1E4589E8007A6581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		043B5B211E4589E8007A6581 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		043B5B231E4589E8007A6581 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		043B5B261E4589E9007A6581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		043B5B281E4589E9007A6581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		043B5B2B1E4589E9007A6581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		043B5B2D1E4589E9007A6581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		043B5AD91E456C01007A6581 /* Frameworks */ = {
+		043B5B191E4589E8007A6581 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,31 +37,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		043B5AD31E456C00007A6581 = {
+		043B5B131E4589E8007A6581 = {
 			isa = PBXGroup;
 			children = (
-				043B5ADE1E456C01007A6581 /* IntelliChef */,
-				043B5ADD1E456C01007A6581 /* Products */,
+				043B5B1E1E4589E8007A6581 /* IntelliChef */,
+				043B5B1D1E4589E8007A6581 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		043B5ADD1E456C01007A6581 /* Products */ = {
+		043B5B1D1E4589E8007A6581 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				043B5ADC1E456C01007A6581 /* IntelliChef.app */,
+				043B5B1C1E4589E8007A6581 /* IntelliChef.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		043B5ADE1E456C01007A6581 /* IntelliChef */ = {
+		043B5B1E1E4589E8007A6581 /* IntelliChef */ = {
 			isa = PBXGroup;
 			children = (
-				043B5ADF1E456C01007A6581 /* AppDelegate.swift */,
-				043B5AE11E456C01007A6581 /* ViewController.swift */,
-				043B5AE31E456C01007A6581 /* Main.storyboard */,
-				043B5AE61E456C01007A6581 /* Assets.xcassets */,
-				043B5AE81E456C01007A6581 /* LaunchScreen.storyboard */,
-				043B5AEB1E456C01007A6581 /* Info.plist */,
+				043B5B1F1E4589E8007A6581 /* AppDelegate.swift */,
+				043B5B211E4589E8007A6581 /* MasterViewController.swift */,
+				043B5B231E4589E8007A6581 /* DetailViewController.swift */,
+				043B5B251E4589E9007A6581 /* Main.storyboard */,
+				043B5B281E4589E9007A6581 /* Assets.xcassets */,
+				043B5B2A1E4589E9007A6581 /* LaunchScreen.storyboard */,
+				043B5B2D1E4589E9007A6581 /* Info.plist */,
 			);
 			path = IntelliChef;
 			sourceTree = "<group>";
@@ -67,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		043B5ADB1E456C01007A6581 /* IntelliChef */ = {
+		043B5B1B1E4589E8007A6581 /* IntelliChef */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 043B5AEE1E456C01007A6581 /* Build configuration list for PBXNativeTarget "IntelliChef" */;
+			buildConfigurationList = 043B5B301E4589E9007A6581 /* Build configuration list for PBXNativeTarget "IntelliChef" */;
 			buildPhases = (
-				043B5AD81E456C01007A6581 /* Sources */,
-				043B5AD91E456C01007A6581 /* Frameworks */,
-				043B5ADA1E456C01007A6581 /* Resources */,
+				043B5B181E4589E8007A6581 /* Sources */,
+				043B5B191E4589E8007A6581 /* Frameworks */,
+				043B5B1A1E4589E8007A6581 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -81,27 +84,27 @@
 			);
 			name = IntelliChef;
 			productName = IntelliChef;
-			productReference = 043B5ADC1E456C01007A6581 /* IntelliChef.app */;
+			productReference = 043B5B1C1E4589E8007A6581 /* IntelliChef.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		043B5AD41E456C00007A6581 /* Project object */ = {
+		043B5B141E4589E8007A6581 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Joey Murphy";
 				TargetAttributes = {
-					043B5ADB1E456C01007A6581 = {
+					043B5B1B1E4589E8007A6581 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = V4JEZHQS9J;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 043B5AD71E456C00007A6581 /* Build configuration list for PBXProject "IntelliChef" */;
+			buildConfigurationList = 043B5B171E4589E8007A6581 /* Build configuration list for PBXProject "IntelliChef" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -109,54 +112,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 043B5AD31E456C00007A6581;
-			productRefGroup = 043B5ADD1E456C01007A6581 /* Products */;
+			mainGroup = 043B5B131E4589E8007A6581;
+			productRefGroup = 043B5B1D1E4589E8007A6581 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				043B5ADB1E456C01007A6581 /* IntelliChef */,
+				043B5B1B1E4589E8007A6581 /* IntelliChef */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		043B5ADA1E456C01007A6581 /* Resources */ = {
+		043B5B1A1E4589E8007A6581 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043B5AEA1E456C01007A6581 /* LaunchScreen.storyboard in Resources */,
-				043B5AE71E456C01007A6581 /* Assets.xcassets in Resources */,
-				043B5AE51E456C01007A6581 /* Main.storyboard in Resources */,
+				043B5B2C1E4589E9007A6581 /* LaunchScreen.storyboard in Resources */,
+				043B5B291E4589E9007A6581 /* Assets.xcassets in Resources */,
+				043B5B271E4589E9007A6581 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		043B5AD81E456C01007A6581 /* Sources */ = {
+		043B5B181E4589E8007A6581 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043B5AE21E456C01007A6581 /* ViewController.swift in Sources */,
-				043B5AE01E456C01007A6581 /* AppDelegate.swift in Sources */,
+				043B5B241E4589E8007A6581 /* DetailViewController.swift in Sources */,
+				043B5B221E4589E8007A6581 /* MasterViewController.swift in Sources */,
+				043B5B201E4589E8007A6581 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		043B5AE31E456C01007A6581 /* Main.storyboard */ = {
+		043B5B251E4589E9007A6581 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				043B5AE41E456C01007A6581 /* Base */,
+				043B5B261E4589E9007A6581 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		043B5AE81E456C01007A6581 /* LaunchScreen.storyboard */ = {
+		043B5B2A1E4589E9007A6581 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				043B5AE91E456C01007A6581 /* Base */,
+				043B5B2B1E4589E9007A6581 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -164,7 +168,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		043B5AEC1E456C01007A6581 /* Debug */ = {
+		043B5B2E1E4589E9007A6581 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -214,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		043B5AED1E456C01007A6581 /* Release */ = {
+		043B5B2F1E4589E9007A6581 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -257,7 +261,7 @@
 			};
 			name = Release;
 		};
-		043B5AEF1E456C01007A6581 /* Debug */ = {
+		043B5B311E4589E9007A6581 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -270,7 +274,7 @@
 			};
 			name = Debug;
 		};
-		043B5AF01E456C01007A6581 /* Release */ = {
+		043B5B321E4589E9007A6581 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -286,24 +290,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		043B5AD71E456C00007A6581 /* Build configuration list for PBXProject "IntelliChef" */ = {
+		043B5B171E4589E8007A6581 /* Build configuration list for PBXProject "IntelliChef" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				043B5AEC1E456C01007A6581 /* Debug */,
-				043B5AED1E456C01007A6581 /* Release */,
+				043B5B2E1E4589E9007A6581 /* Debug */,
+				043B5B2F1E4589E9007A6581 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		043B5AEE1E456C01007A6581 /* Build configuration list for PBXNativeTarget "IntelliChef" */ = {
+		043B5B301E4589E9007A6581 /* Build configuration list for PBXNativeTarget "IntelliChef" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				043B5AEF1E456C01007A6581 /* Debug */,
-				043B5AF01E456C01007A6581 /* Release */,
+				043B5B311E4589E9007A6581 /* Debug */,
+				043B5B321E4589E9007A6581 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 043B5AD41E456C00007A6581 /* Project object */;
+	rootObject = 043B5B141E4589E8007A6581 /* Project object */;
 }

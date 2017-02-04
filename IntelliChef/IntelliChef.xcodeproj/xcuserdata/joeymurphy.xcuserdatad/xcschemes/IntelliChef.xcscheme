@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "043B5ADB1E456C01007A6581"
+               BlueprintIdentifier = "043B5B1B1E4589E8007A6581"
                BuildableName = "IntelliChef.app"
                BlueprintName = "IntelliChef"
                ReferencedContainer = "container:IntelliChef.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "043B5ADB1E456C01007A6581"
+            BlueprintIdentifier = "043B5B1B1E4589E8007A6581"
             BuildableName = "IntelliChef.app"
             BlueprintName = "IntelliChef"
             ReferencedContainer = "container:IntelliChef.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "043B5ADB1E456C01007A6581"
+            BlueprintIdentifier = "043B5B1B1E4589E8007A6581"
             BuildableName = "IntelliChef.app"
             BlueprintName = "IntelliChef"
             ReferencedContainer = "container:IntelliChef.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "043B5ADB1E456C01007A6581"
+            BlueprintIdentifier = "043B5B1B1E4589E8007A6581"
             BuildableName = "IntelliChef.app"
             BlueprintName = "IntelliChef"
             ReferencedContainer = "container:IntelliChef.xcodeproj">

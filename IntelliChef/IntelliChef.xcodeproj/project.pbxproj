@@ -13,7 +13,7 @@
 		043B5B271E4589E9007A6581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B251E4589E9007A6581 /* Main.storyboard */; };
 		043B5B2C1E4589E9007A6581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B2A1E4589E9007A6581 /* LaunchScreen.storyboard */; };
 		043B5B341E458DE8007A6581 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B331E458DE8007A6581 /* Recipe.swift */; };
-		043B5B461E459D64007A6581 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B451E459D64007A6581 /* Media.xcassets */; };
+		043B5B481E459EFF007A6581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B471E459EFF007A6581 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		043B5B2B1E4589E9007A6581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043B5B2D1E4589E9007A6581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		043B5B331E458DE8007A6581 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		043B5B451E459D64007A6581 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		043B5B471E459EFF007A6581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +63,9 @@
 				043B5B231E4589E8007A6581 /* DetailViewController.swift */,
 				043B5B251E4589E9007A6581 /* Main.storyboard */,
 				043B5B331E458DE8007A6581 /* Recipe.swift */,
+				043B5B471E459EFF007A6581 /* Assets.xcassets */,
 				043B5B2A1E4589E9007A6581 /* LaunchScreen.storyboard */,
 				043B5B2D1E4589E9007A6581 /* Info.plist */,
-				043B5B451E459D64007A6581 /* Media.xcassets */,
 			);
 			path = IntelliChef;
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043B5B2C1E4589E9007A6581 /* LaunchScreen.storyboard in Resources */,
-				043B5B461E459D64007A6581 /* Media.xcassets in Resources */,
+				043B5B481E459EFF007A6581 /* Assets.xcassets in Resources */,
 				043B5B271E4589E9007A6581 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,8 @@
 		043B5B5F1E45BD13007A6581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B5E1E45BD13007A6581 /* LaunchScreen.storyboard */; };
 		043B5B611E45BD18007A6581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B601E45BD18007A6581 /* Main.storyboard */; };
 		043B5B731E45D16B007A6581 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B721E45D16B007A6581 /* Media.xcassets */; };
+		EF7EBF8A1E46261500A2BFDA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7EBF891E46261500A2BFDA /* PageViewController.swift */; };
+		EF7EBF8E1E4628DF00A2BFDA /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7EBF8D1E4628DF00A2BFDA /* PageContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		043B5B5E1E45BD13007A6581 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043B5B601E45BD18007A6581 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		043B5B721E45D16B007A6581 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		EF7EBF891E46261500A2BFDA /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		EF7EBF8D1E4628DF00A2BFDA /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			children = (
 				043B5B551E45BCEF007A6581 /* AppDelegate.swift */,
 				043B5B601E45BD18007A6581 /* Main.storyboard */,
+				EF7EBF891E46261500A2BFDA /* PageViewController.swift */,
+				EF7EBF8D1E4628DF00A2BFDA /* PageContentViewController.swift */,
 				043B5B5E1E45BD13007A6581 /* LaunchScreen.storyboard */,
 				043B5B561E45BCEF007A6581 /* DetailViewController.swift */,
 				043B5B571E45BCEF007A6581 /* MasterViewController.swift */,
@@ -145,7 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				043B5B5A1E45BCEF007A6581 /* AppDelegate.swift in Sources */,
+				EF7EBF8A1E46261500A2BFDA /* PageViewController.swift in Sources */,
 				043B5B5B1E45BCEF007A6581 /* DetailViewController.swift in Sources */,
+				EF7EBF8E1E4628DF00A2BFDA /* PageContentViewController.swift in Sources */,
 				043B5B5C1E45BCEF007A6581 /* MasterViewController.swift in Sources */,
 				043B5B5D1E45BCEF007A6581 /* Recipe.swift in Sources */,
 			);

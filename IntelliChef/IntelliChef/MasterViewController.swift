@@ -8,14 +8,6 @@
 
 import UIKit
 
-extension MasterViewController: UISearchResultsUpdating {
-    @available(iOS 8.0, *)
-    public func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchText: searchController.searchBar.text!)
-    }
-
-}
-
 class MasterViewController: UITableViewController {
   
   // MARK: - Properties
@@ -37,11 +29,11 @@ class MasterViewController: UITableViewController {
         Recipe(category:"Appetizer", name:"Garlic Bread"),
         Recipe(category:"Dessert", name:"Tiramisu"),
         Recipe(category:"Entree", name:"Burger"),
-        Recipe(category:"Appetizer", name:"Garlic Bread"),
-        Recipe(category:"Dessert", name:"Tiramisu"),
-        Recipe(category:"Entree", name:"Spaghetti"),
-        Recipe(category:"Appetizer", name:"Garlic Bread"),
-        Recipe(category:"Dessert", name:"Tiramisu"),
+        Recipe(category:"Appetizer", name:"Wings"),
+        Recipe(category:"Dessert", name:"Vanilla Sundae"),
+        Recipe(category:"Entree", name:"Chicken"),
+        Recipe(category:"Appetizer", name:"Ceaser Salad"),
+        Recipe(category:"Dessert", name:"Greek Yogurt"),
 
     ]
     searchController.searchResultsUpdater = self
@@ -73,13 +65,20 @@ class MasterViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if searchController.isActive && searchController.searchBar.text != "" {
+        return filteredRecipes.count
+    }
     return recipes.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    
-    let recipe = recipes[indexPath.row]
+    let recipe: Recipe
+    if searchController.isActive && searchController.searchBar.text != "" {
+        recipe = filteredRecipes[indexPath.row]
+    } else {
+        recipe = recipes[indexPath.row]
+    }
     cell.textLabel!.text = recipe.name
     cell.detailTextLabel!.text = recipe.category
     return cell
@@ -100,3 +99,10 @@ class MasterViewController: UITableViewController {
   
 }
 
+extension MasterViewController: UISearchResultsUpdating {
+    @available(iOS 8.0, *)
+    public func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
+    
+}

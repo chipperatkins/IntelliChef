@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDataSource
+class PageViewController: UIPageViewController
 {
     
     var arrPageTitle: NSArray = NSArray()
@@ -22,54 +22,58 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource
         
         arrPageTitle = ["This is The App Guruz", "This is Table Tennis 3D", "This is Hide Secrets"];
         arrPagePhoto = ["1.jpg", "2.jpg", "3.jpg"];
-        self.setViewControllers([getViewControllerAtIndex(0   )] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        
+        nextViewController = getViewControllerAtIndex(0)
+        nextViewController?.delegator = self
+        
+        self.setViewControllers([nextViewController!] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     }
-    func action() {
+    func actionRight(pageContentViewController: PageContentViewController) {
         
-        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
+        nextViewController = pageViewController((nextViewController?.delegator!)!, viewControllerAfter: pageContentViewController)
         
-        let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! PageContentViewController
+        nextViewController?.delegator = self
         
-        let resultView = pageViewController(ViewController, viewControllerAfter: pageContentViewController)
-        
-        self.setViewControllers([resultView!] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
-        
+        self.setViewControllers([nextViewController!] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         }
+    func actionLeft(pageContentViewController: PageContentViewController) {
+        
+        nextViewController = pageViewController((nextViewController?.delegator!)!, viewControllerBefore: pageContentViewController)
+        
+        nextViewController?.delegator = self
+        
+        self.setViewControllers([nextViewController!] as [UIViewController], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
+    }
 
     // MARK:- UIPageViewControllerDataSource Methods
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> PageContentViewController
     {
         let pageContent: PageContentViewController = viewController as! PageContentViewController
         
         var index = pageContent.pageIndex
         
-        if ((index == 0) || (index == NSNotFound))
+        if ((index > 0) || (index == NSNotFound))
         {
-            return nil
+            index -= 1;
+            return getViewControllerAtIndex(index)
         }
-        
-        index -= 1;
-        return getViewControllerAtIndex(index)
+        else {return getViewControllerAtIndex(0)}
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> PageContentViewController
     {
         let pageContent: PageContentViewController = viewController as! PageContentViewController
         
         var index = pageContent.pageIndex
         
-        if (index == NSNotFound)
-        {
-            return nil;
-        }
         
-        index += 1;
-        if (index == arrPageTitle.count)
+        if (index+1 < arrPageTitle.count && index != NSNotFound)
         {
-            return nil;
+            index += 1;
+            return getViewControllerAtIndex(index)
         }
-        return getViewControllerAtIndex(index)
+        else {return getViewControllerAtIndex(0)}
     }
     
     // MARK:- Other Methods
@@ -85,3 +89,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource
         return pageContentViewController
     }
 }
+
+protocol PageViewControllerDelegate: class {
+    func didFinishTask(sender: PageViewController)
+}
+

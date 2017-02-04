@@ -72,13 +72,21 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
+                        <connections>
+                            <outlet property="titleView" destination="yQa-ta-xos" id="FBg-1a-x3n"/>
+                        </connections>
+                    </navigationItem>
                     <connections>
                         <outlet property="candyImageView" destination="uF3-jO-3LS" id="i9O-Fz-LgJ"/>
                         <outlet property="detailDescriptionLabel" destination="IRE-oh-yTL" id="ijF-PT-ves"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" id="yQa-ta-xos">
+                    <rect key="frame" x="0.0" y="0.0" width="76" height="59"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                </imageView>
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
@@ -143,28 +151,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Zdf-7t-Un8">
                         <nil key="title"/>
-                        <view key="titleView" contentMode="scaleToFill" id="PYW-tr-Udn">
-                            <rect key="frame" x="96" y="6" width="128" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hKW-f6-gji">
-                                    <rect key="frame" x="-56" y="-48" width="240" height="128"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMI-PK-VDI">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        </imageView>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="hKW-f6-gji" firstAttribute="centerX" secondItem="PYW-tr-Udn" secondAttribute="centerX" id="AQx-IV-MO2"/>
-                                <constraint firstItem="hKW-f6-gji" firstAttribute="centerY" secondItem="PYW-tr-Udn" secondAttribute="centerY" id="yCa-eH-6vf"/>
-                            </constraints>
-                        </view>
+                        <connections>
+                            <outlet property="titleView" destination="mdW-dc-c3p" id="sim-Cf-4dv"/>
+                        </connections>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" id="mdW-dc-c3p">
+                    <rect key="frame" x="0.0" y="0.0" width="76" height="59"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </objects>
             <point key="canvasLocation" x="708.75" y="-630.63380281690138"/>
         </scene>
@@ -186,6 +182,9 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="title" width="76" height="62"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>

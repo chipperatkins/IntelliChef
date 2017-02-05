@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MasterViewController: UITableViewController {
     
@@ -17,7 +18,6 @@ class MasterViewController: UITableViewController {
     var filteredRecipes = [Recipe]()
     var makeMeal = false
     
-    
     @IBAction func meal(_ sender: UIBarButtonItem) {
         
         
@@ -26,7 +26,6 @@ class MasterViewController: UITableViewController {
     // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         searchController.searchBar.searchBarStyle = UISearchBarStyle(rawValue: 2)!
         self.tableView.allowsMultipleSelection = true
@@ -39,9 +38,41 @@ class MasterViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+    
+        let config = URLSessionConfiguration.default // Session Configuration
+        let session = URLSession(configuration: config) // Load configuration into Session
+        let url = URL(string: "http://10.10.224.115:80/getRecipeList.php")!
         
+        let task = session.dataTask(with: url, completionHandler: {
+            (data, response, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+                
+            } else {
+                
+                do {
+                    
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]]
+                    {
+                        //Implement your logic
+                        print(json)
+                        
+                    }
+                    
+                } catch {
+                    
+                    print("error in JSONSerialization")
+                    
+                }
+                
+                
+            }
+            
+        })
+        task.resume()
         
-        recipes = [
+        /*recipes = [
             Recipe(category:"Entree", name:"Spaghetti"),
             Recipe(category:"Appetizer", name:"Garlic Bread"),
             Recipe(category:"Dessert", name:"Tiramisu"),
@@ -61,8 +92,10 @@ class MasterViewController: UITableViewController {
             Recipe(category:"Appetizer", name:"Apple Pie"),
             Recipe(category:"Dessert", name:"Pumpkin PIe")
             
-        ]
+        ]*/
     }
+    
+    // modify the request as necessary, if necessary
     
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
@@ -195,7 +228,7 @@ class MasterViewController: UITableViewController {
     }
 }
 
-extension MealViewController: UISearchResultsUpdating {
+extension MasterViewController: UISearchResultsUpdating {
     @available(iOS 8.0, *)
     public func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)

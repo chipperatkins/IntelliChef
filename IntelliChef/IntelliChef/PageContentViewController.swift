@@ -12,8 +12,8 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
 
  
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var image: UIImageView!
     
+
     var pageIndex: Int = 0
     
     var strTitle: String!
@@ -36,8 +36,8 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label.text = strTitle
-        image.image = UIImage(named: strPhotoName)
+        label.text = strTitle + " This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up movin on. This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up"
+        //image.image = UIImage(named: strPhotoName)
         // Do any additional setup after loading the view.
     }
 

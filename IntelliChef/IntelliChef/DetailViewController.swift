@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     }
  
     func configureMealView() {
-        debugPrint("Detail: configureMealView()",detailArray as [Recipe]!)
+        debugPrint("Detail: configureMealView()",detailArray![0].summary)
         let multiSummary = "" as NSMutableString
         if (detailArray?.count)! > 1 {
             for detail in detailArray! {

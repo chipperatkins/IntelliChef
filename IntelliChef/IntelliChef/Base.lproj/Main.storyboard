@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Unknown constraint types" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,7 +47,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVk-E3-1Vi" userLabel="Category">
-                                <rect key="frame" x="0.0" y="64" width="320" height="46"/>
+                                <rect key="frame" x="16" y="64" width="288" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="GRe-6Q-OU6"/>
                                 </constraints>
@@ -55,11 +56,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYY-8M-vmu" userLabel="Summary">
-                                <rect key="frame" x="0.0" y="118" width="320" height="0.0"/>
+                                <rect key="frame" x="16" y="118" width="288" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.5568627451" green="0.72156862749999995" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mdw-Ra-a71">
+                                <rect key="frame" x="32" y="214" width="256" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mdw-Ra-a71" secondAttribute="height" multiplier="15:8" id="8Gd-Gf-E2P"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-Dk-HZa" userLabel="Preparation Time">
                                 <rect key="frame" x="16" y="126" width="144" height="48"/>
                                 <constraints>
@@ -103,24 +110,29 @@
                         <color key="backgroundColor" red="0.098039215690000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="h0U-Dk-HZa" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="3XL-dn-zbN"/>
+                            <constraint firstAttribute="trailing" secondItem="TYY-8M-vmu" secondAttribute="trailing" constant="16" id="6Vd-yR-H59"/>
+                            <constraint firstItem="Mdw-Ra-a71" firstAttribute="top" secondItem="x8g-27-c9V" secondAttribute="bottom" constant="40" id="6d6-sb-0Ss"/>
                             <constraint firstItem="x8g-27-c9V" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="6dS-8u-9IO"/>
                             <constraint firstItem="AfC-Wh-gX0" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="8qn-Pb-Rt6"/>
-                            <constraint firstAttribute="trailing" secondItem="TYY-8M-vmu" secondAttribute="trailing" id="9wY-YT-V7h"/>
                             <constraint firstItem="jVk-E3-1Vi" firstAttribute="leading" secondItem="TYY-8M-vmu" secondAttribute="leading" id="FaF-dk-nDw"/>
                             <constraint firstItem="jVk-E3-1Vi" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="Gfn-Gb-Haj"/>
+                            <constraint firstItem="h0U-Dk-HZa" firstAttribute="top" secondItem="TYY-8M-vmu" secondAttribute="bottom" constant="8" id="Gl8-HF-C1J"/>
                             <constraint firstItem="AfC-Wh-gX0" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="Rhq-jq-PIR"/>
                             <constraint firstItem="jVk-E3-1Vi" firstAttribute="trailing" secondItem="TYY-8M-vmu" secondAttribute="trailing" id="SIp-A2-NEg"/>
                             <constraint firstItem="TYY-8M-vmu" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="XEk-bi-SGI"/>
                             <constraint firstItem="TYY-8M-vmu" firstAttribute="top" secondItem="jVk-E3-1Vi" secondAttribute="bottom" constant="8" id="XTY-7t-ZF1"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="AfC-Wh-gX0" secondAttribute="bottom" constant="20" id="YWd-tl-jhm"/>
                             <constraint firstItem="h0U-Dk-HZa" firstAttribute="top" secondItem="TYY-8M-vmu" secondAttribute="bottom" constant="8" id="cxd-3h-W2S"/>
+                            <constraint firstItem="Mdw-Ra-a71" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="d5D-0T-bPZ"/>
                             <constraint firstItem="AfC-Wh-gX0" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="fNx-R1-ayy"/>
                             <constraint firstItem="x8g-27-c9V" firstAttribute="top" secondItem="TYY-8M-vmu" secondAttribute="bottom" constant="8" id="g7e-bX-fH6"/>
-                            <constraint firstItem="TYY-8M-vmu" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="lMz-dJ-0tg"/>
+                            <constraint firstItem="Mdw-Ra-a71" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="16" id="imZ-V2-LwU"/>
+                            <constraint firstItem="x8g-27-c9V" firstAttribute="top" secondItem="TYY-8M-vmu" secondAttribute="bottom" constant="8" id="mNW-gf-LNL"/>
+                            <constraint firstItem="TYY-8M-vmu" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="16" id="xqX-fT-v1A"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
+                    <navigationItem key="navigationItem" title="IntelliChef" id="mOI-FS-AaM">
                         <connections>
                             <outlet property="titleView" destination="yQa-ta-xos" id="FBg-1a-x3n"/>
                         </connections>
@@ -129,6 +141,7 @@
                         <outlet property="cook" destination="x8g-27-c9V" id="aTb-yp-Whj"/>
                         <outlet property="detailLabel" destination="jVk-E3-1Vi" id="nDW-U9-v2x"/>
                         <outlet property="prep" destination="h0U-Dk-HZa" id="MBl-e7-rap"/>
+                        <outlet property="stockImage" destination="Mdw-Ra-a71" id="Ulx-2g-rSZ"/>
                         <outlet property="summary" destination="TYY-8M-vmu" id="gAb-N2-rfE"/>
                     </connections>
                 </viewController>
@@ -308,9 +321,11 @@
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.098039215686274508" green="0.24313725490196078" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.099347837270000003" green="0.24401849510000001" blue="0.30448687079999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.55780053139999997" green="0.72312861679999996" blue="0.28174546360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -440,7 +455,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="ueI-4Y-psR">
+                    <navigationItem key="navigationItem" title="IntelliChef" id="ueI-4Y-psR">
                         <connections>
                             <outlet property="titleView" destination="yQa-ta-xos" id="V0N-fC-8Cd"/>
                         </connections>
@@ -527,16 +542,18 @@
             </objects>
             <point key="canvasLocation" x="3281" y="-1554"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--IntelliChef-->
         <scene sceneID="RJB-YW-MNf">
             <objects>
-                <navigationController id="gIa-H3-XeB" sceneMemberID="viewController">
+                <navigationController title="IntelliChef" id="gIa-H3-XeB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Dln-7y-eGH">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.098039215690000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.5578005313873291" green="0.72312861680984497" blue="0.28174546360969543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="0.0056340633891522884" green="0.011026831343770027" blue="0.0040464922785758972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -554,6 +571,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="tsl-Nk-0bq"/>
         <segue reference="TGe-n1-x0V"/>
-        <segue reference="utn-za-UFj"/>
+        <segue reference="os6-jo-eKr"/>
     </inferredMetricsTieBreakers>
 </document>

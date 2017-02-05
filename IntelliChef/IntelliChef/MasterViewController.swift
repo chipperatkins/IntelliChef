@@ -58,7 +58,7 @@ class MasterViewController: UITableViewController {
                         print(json)
                         for i in 0..<json.count {
                             print(json[i])
-                            self.recipes.append(Recipe(id: json[i]["recipeID"] as! String, name: json[i]["name"] as! String, prep: (prep: json[i]["prepEst"] as! String) + "minutes", cook: (cook: json[i]["cookEst"] as! String) + "minutes"))
+                            self.recipes.append(Recipe(id: json[i]["recipeID"] as! String, name: json[i]["name"] as! String, prep: (prep: json[i]["prepEst"] as! String) + " minutes", cook: (cook: json[i]["cookEst"] as! String) + " minutes"))
                         }
                         
                         DispatchQueue.main.sync(execute: {

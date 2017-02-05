@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var prep: UILabel?
     @IBOutlet weak var cook: UILabel?
     
+    @IBOutlet weak var stockImage: UIImageView?
+    
     var detailArray: [Recipe]? {
         didSet {
             configureMealView()
@@ -34,6 +36,21 @@ class DetailViewController: UIViewController {
             debugPrint("Detail Array", detail.name as Any)
             //self.navigationItem.title = detail.name
             detailLabel?.text = detail.name
+            
+            if detail.name == "Chicken Parmesan" || detail.name == "Pan-Seared Chicken" {
+                self.stockImage?.image = #imageLiteral(resourceName: "food-1920")
+            }
+            else if detail.name == "Whiskey Coke" {
+                self.stockImage?.image = #imageLiteral(resourceName: "whiskey-1920")
+            }
+            else if detail.name == "Pancakes" {
+                self.stockImage?.image = #imageLiteral(resourceName: "pancake-1920")
+            }
+            else if detail.name == "Mashed Potatoes" {
+                self.stockImage?.image = #imageLiteral(resourceName: "mashed-potatoes-1920")
+            }
+            
+            
             debugPrint("Summary.text", summary?.text as Any)
             summary?.text = detail.summary
             prep?.text = "Prep time\n" + detail.prepTime

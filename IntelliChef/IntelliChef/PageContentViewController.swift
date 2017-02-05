@@ -14,23 +14,13 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     
-    var timer = Timer()
-    var time = 100;
-    var hastimer = false
-    func decreaseTimer() {
-        if time > 0 {
-            time -= 1
-            timerLabel.text = String(time)
-        } else {
-            timer.invalidate()
-        }
-    }
-    
-    
+    public var delegateTimerLabel: Float!
     var pageIndex: Int = 0
-    
+    var timerManager = TimerManager()
     var strTitle: String!
     var strPhotoName: String!
+    var time: Int = 0
+    
     
     var delegator: PageViewController?
     
@@ -48,11 +38,11 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timerManager.sharedInstance.start(time: 100)
+        timerLabel.text = "Timer: 00:00"
         //check if hasTimer
         //instastiate it and call decreaseTimer, set hasTimer to false, time should continue on each screen
-        if !hastimer {decreaseTimer()
-            hastimer = true}
-        label.text = strTitle + " This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up movin on. This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them"
+        label.text = strTitle
         //image.image = UIImage(named: strPhotoName)
         // Do any additional setup after loading the view.
     }
@@ -63,6 +53,8 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     }
     
     func didFinishTask(sender: PageViewController) {
+        
+
     }
 
     /*

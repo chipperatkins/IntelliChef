@@ -26,9 +26,8 @@ class DetailViewController: UIViewController {
         debugPrint("Detail Item", detailItem?.name as Any)
         if let detail = detailItem {
             if let category = detailLabel {
-                debugPrint(detail.name,detail.category,detail.summary,detail.prepTime,detail.cookTime)
-                title = detail.name
-                category.text = detail.category
+                self.navigationItem.title = detail.name
+                category.text = detail.name
                 summary.text = detail.summary
                 prep.text = "Prep time\n" + detail.prepTime
                 cook.text = "Cook Time\n" + detail.cookTime

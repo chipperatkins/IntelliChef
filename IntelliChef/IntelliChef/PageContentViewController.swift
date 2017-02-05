@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageContentViewController: UIViewController {
+class PageContentViewController: UIViewController, PageViewControllerDelegate {
 
  
     @IBOutlet weak var label: UILabel!
@@ -19,12 +19,18 @@ class PageContentViewController: UIViewController {
     var strTitle: String!
     var strPhotoName: String!
     
+    var delegator: PageViewController?
     
-    @IBAction func buttonPress(_ sender: UIButton) {
-        
-        
-
+    
+    @IBAction func swipeLeft(_ sender: Any) {
+        delegator?.actionLeft(pageContentViewController: self)
     }
+    @IBAction func swipeRight(_ sender: Any) {
+        delegator?.actionRight(pageContentViewController: self)
+    }
+    //@IBAction func buttonPress(_ sender: UIButton) { Button implementation for right
+    //    delegator?.actionRight(pageContentViewController: self)
+    //}
     
     
     override func viewDidLoad() {
@@ -40,6 +46,8 @@ class PageContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func didFinishTask(sender: PageViewController) {
+    }
 
     /*
     // MARK: - Navigation

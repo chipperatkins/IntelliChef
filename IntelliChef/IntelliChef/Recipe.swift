@@ -17,12 +17,12 @@ class Recipe {
     var cookTime : String
     var steps : Int
     
-    init(category: String, name: String) {
+    init(id: String, name: String, prep: String, cook: String) {
         self.name = name
-        self.id = "DEAD"
-        self.category = category
+        self.id = id
+        self.category = "DEAD"
         self.summary = "Bacon ipsum dolor amet tongue jerky ham hock shoulder, frankfurter pastrami drumstick ground round. Pork chop landjaeger cow meatball, capicola spare ribs jerky andouille sausage turkey drumstick frankfurter turducken burgdoggen tail."
-        self.prepTime = "5 minutes"
-        self.cookTime = "20 minutes"
+        self.prepTime = prep
+        self.cookTime = cook
         self.steps = 10
     }}

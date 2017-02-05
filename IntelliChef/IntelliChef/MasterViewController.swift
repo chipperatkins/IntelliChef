@@ -41,7 +41,8 @@ class MasterViewController: UITableViewController {
         let session = URLSession(configuration: config) // Load configuration into Session
         let url = URL(string: "http://10.10.224.115:80/getRecipeList.php")!
         
-        let task = session.dataTask(with: url, completionHandler: {
+        let task = session.dataTask(with: url, completionHandler:
+            {
             (data, response, error) in
             
             if error != nil {
@@ -53,9 +54,16 @@ class MasterViewController: UITableViewController {
                     
                     if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]]
                     {
-                        //Implement your logic
-                        print(json)
                         
+                        print(json)
+                        for i in 0..<json.count {
+                            print(json[i])
+                            self.recipes.append(Recipe(id: json[i]["recipeID"] as! String, name: json[i]["name"] as! String, prep: (prep: json[i]["prepEst"] as! String) + "minutes", cook: (cook: json[i]["cookEst"] as! String) + "minutes"))
+                        }
+                        
+                        DispatchQueue.main.sync(execute: {
+                            self.tableView.reloadData()
+                        })
                     }
                     
                 } catch {

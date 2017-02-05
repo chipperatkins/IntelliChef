@@ -128,7 +128,7 @@
                         <outlet property="cook" destination="x8g-27-c9V" id="aTb-yp-Whj"/>
                         <outlet property="detailLabel" destination="jVk-E3-1Vi" id="nDW-U9-v2x"/>
                         <outlet property="prep" destination="h0U-Dk-HZa" id="MBl-e7-rap"/>
-                        <outlet property="summary" destination="x8g-27-c9V" id="xfh-Gy-j81"/>
+                        <outlet property="summary" destination="TYY-8M-vmu" id="gAb-N2-rfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -182,10 +182,17 @@
                         <color key="backgroundColor" red="0.098039215690000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="pMZ-pR-3eX" firstAttribute="top" secondItem="CmI-1Y-zah" secondAttribute="bottom" constant="8" id="4u0-wj-ACc"/>
-                            <constraint firstItem="CmI-1Y-zah" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leadingMargin" id="D3s-1j-0xP"/>
-                            <constraint firstItem="CmI-1Y-zah" firstAttribute="trailing" secondItem="Mon-YL-KCF" secondAttribute="trailingMargin" id="Phc-eK-Sk6"/>
-                            <constraint firstItem="CmI-1Y-zah" firstAttribute="top" secondItem="74V-KV-1Ot" secondAttribute="bottom" id="rye-6w-YBW"/>
+                            <constraint firstItem="BUx-uI-IMQ" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="4FN-8a-aLY"/>
+                            <constraint firstItem="BUx-uI-IMQ" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="BTu-hU-SFC"/>
+                            <constraint firstItem="ACb-9f-pFU" firstAttribute="top" secondItem="74V-KV-1Ot" secondAttribute="bottom" constant="33" id="BcP-l2-dkQ"/>
+                            <constraint firstItem="ACb-9f-pFU" firstAttribute="trailing" secondItem="Mon-YL-KCF" secondAttribute="trailingMargin" id="EM8-vk-sYL"/>
+                            <constraint firstAttribute="trailing" secondItem="BUx-uI-IMQ" secondAttribute="trailing" id="K1a-qJ-Ivs"/>
+                            <constraint firstItem="ACb-9f-pFU" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leadingMargin" id="Zil-1G-BIG"/>
+                            <constraint firstItem="pMZ-pR-3eX" firstAttribute="top" secondItem="BUx-uI-IMQ" secondAttribute="bottom" id="c0K-yp-bm2"/>
+                            <constraint firstItem="BUx-uI-IMQ" firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="chL-ma-t2m"/>
+                            <constraint firstItem="BUx-uI-IMQ" firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="gWG-GR-mxb"/>
+                            <constraint firstAttribute="trailing" secondItem="BUx-uI-IMQ" secondAttribute="trailing" id="lxP-SW-dZE"/>
+                            <constraint firstItem="pMZ-pR-3eX" firstAttribute="top" secondItem="BUx-uI-IMQ" secondAttribute="bottom" id="oyd-3e-sQP"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="HTd-KL-A9f" appends="YES" id="TRV-Z4-0q8"/>

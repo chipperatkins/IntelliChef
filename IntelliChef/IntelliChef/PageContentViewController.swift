@@ -12,18 +12,22 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
 
  
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
-
+    public var delegateTimerLabel: Float!
     var pageIndex: Int = 0
-    
+    var timerManager = TimerManager()
     var strTitle: String!
     var strPhotoName: String!
+    var time: Int = 0
+    
     
     var delegator: PageViewController?
     
     
     @IBAction func swipeLeft(_ sender: Any) {
         delegator?.actionLeft(pageContentViewController: self)
+        //check step, if has timer set hasTimer = true
     }
     @IBAction func swipeRight(_ sender: Any) {
         delegator?.actionRight(pageContentViewController: self)
@@ -32,11 +36,13 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     //    delegator?.actionRight(pageContentViewController: self)
     //}
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        label.text = strTitle + " This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up movin on. This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up"
+        timerManager.sharedInstance.start(time: 100)
+        timerLabel.text = "Timer: 00:00"
+        //check if hasTimer
+        //instastiate it and call decreaseTimer, set hasTimer to false, time should continue on each screen
+        label.text = strTitle
         //image.image = UIImage(named: strPhotoName)
         // Do any additional setup after loading the view.
     }
@@ -47,6 +53,8 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     }
     
     func didFinishTask(sender: PageViewController) {
+        
+
     }
 
     /*

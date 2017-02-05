@@ -14,14 +14,17 @@ class PageViewController: UIPageViewController
     
     var arrPageTitle: NSArray = NSArray()
     var arrPagePhoto: NSArray = NSArray()
-    
+    var arrTimer: [Float] = []
     var nextViewController: PageContentViewController?
+    var timerManager = TimerManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        arrPageTitle = ["This is The App Guruz", "This is Table Tennis 3D", "This is Hide Secrets"];
-        arrPagePhoto = ["1.jpg", "2.jpg", "3.jpg"];
+        timerManager.sharedInstance.start(time: 100)
+        arrPageTitle = ["Step 1: Gather Ingredients", "Step 2: Follow the nicely written, interactive steps", "Step 3: Enjoy your meal!", "Step 4: Tell your friends about Intellichef"];
+        arrPagePhoto = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+        arrTimer = [100.0, 100.0, 100.0, 100.0]
         
         nextViewController = getViewControllerAtIndex(0)
         nextViewController?.delegator = self
@@ -35,7 +38,7 @@ class PageViewController: UIPageViewController
         nextViewController?.delegator = self
         
         self.setViewControllers([nextViewController!] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
-        }
+    }
     func actionLeft(pageContentViewController: PageContentViewController) {
         
         nextViewController = pageViewController((nextViewController?.delegator!)!, viewControllerBefore: pageContentViewController)
@@ -44,7 +47,7 @@ class PageViewController: UIPageViewController
         
         self.setViewControllers([nextViewController!] as [UIViewController], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
     }
-
+    
     // MARK:- UIPageViewControllerDataSource Methods
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> PageContentViewController
@@ -81,11 +84,19 @@ class PageViewController: UIPageViewController
     {
         // Create a new view controller and pass suitable data.
         let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! PageContentViewController
-        
         pageContentViewController.strTitle = "\(arrPageTitle[index])"
         pageContentViewController.strPhotoName = "\(arrPagePhoto[index])"
         pageContentViewController.pageIndex = index
-
+        //let checkTime = arrTimer[index]
+        pageContentViewController.time = Int(timerManager.time)
+        //var count = 0
+        print(index)
+        //if checkTime > 0 && count == 0{
+        //    timer.time = Int(arrTimer[index])
+        //}
+        //timerManager.start(time: 100)
+        //count += 1
+        
         return pageContentViewController
     }
 }

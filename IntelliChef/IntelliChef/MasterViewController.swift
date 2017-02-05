@@ -17,7 +17,7 @@ class MasterViewController: UITableViewController {
     var recipes = [Recipe]()
     var filteredRecipes = [Recipe]()
     var addedRecipes = [Recipe]()
-
+    
     
     // MARK: - View Setup
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class MasterViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-    
+        
         let config = URLSessionConfiguration.default // Session Configuration
         let session = URLSession(configuration: config) // Load configuration into Session
         let url = URL(string: "http://10.10.224.115:80/getRecipeList.php")!
@@ -79,26 +79,27 @@ class MasterViewController: UITableViewController {
         task.resume()
         
         /*recipes = [
-            Recipe(category:"Entree", name:"Spaghetti"),
-            Recipe(category:"Appetizer", name:"Garlic Bread"),
-            Recipe(category:"Dessert", name:"Tiramisu"),
-            Recipe(category:"Entree", name:"Burger"),
-            Recipe(category:"Appetizer", name:"Wings"),
-            Recipe(category:"Dessert", name:"Vanilla Sundae"),
-            Recipe(category:"Entree", name:"Chicken"),
-            Recipe(category:"Appetizer", name:"Ceaser Salad"),
-            Recipe(category:"Dessert", name:"Greek Yogurt"),
-            Recipe(category:"Entree", name:"Mac & Cheese"),
-            Recipe(category:"Appetizer", name:"Shrimp Fried Rice"),
-            Recipe(category:"Dessert", name:"Bread Pudding"),
-            Recipe(category:"Entree", name:"Potato Salad"),
-            Recipe(category:"Appetizer", name:"Cole Slaw"),
-            Recipe(category:"Dessert", name:"Homemade Potato Chips"),
-            Recipe(category:"Entree", name:"Steak"),
-            Recipe(category:"Appetizer", name:"Apple Pie"),
-            Recipe(category:"Dessert", name:"Pumpkin PIe")
-            
-        ]*/
+         Recipe(category:"Entree", name:"Spaghetti"),
+         Recipe(category:"Appetizer", name:"Garlic Bread"),
+         Recipe(category:"Dessert", name:"Tiramisu"),
+         Recipe(category:"Entree", name:"Burger"),
+         Recipe(category:"Appetizer", name:"Wings"),
+         Recipe(category:"Dessert", name:"Vanilla Sundae"),
+         Recipe(category:"Entree", name:"Chicken"),
+         Recipe(category:"Appetizer", name:"Ceaser Salad"),
+         Recipe(category:"Dessert", name:"Greek Yogurt"),
+         Recipe(category:"Entree", name:"Mac & Cheese"),
+         Recipe(category:"Appetizer", name:"Shrimp Fried Rice"),
+         Recipe(category:"Dessert", name:"Bread Pudding"),
+         Recipe(category:"Entree", name:"Potato Salad"),
+         Recipe(category:"Appetizer", name:"Cole Slaw"),
+         Recipe(category:"Dessert", name:"Homemade Potato Chips"),
+         Recipe(category:"Entree", name:"Steak"),
+         Recipe(category:"Appetizer", name:"Apple Pie"),
+         Recipe(category:"Dessert", name:"Pumpkin PIe")
+         
+         ]*/
+        recipes.append(Recipe(category: "Test", name: "test"))
     }
     
     // modify the request as necessary, if necessary
@@ -170,11 +171,11 @@ class MasterViewController: UITableViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle(rawValue: 52)!
         tableView.separatorColor = UIColor.clear
         self.tableView.layer.masksToBounds = true
-        self.tableView.backgroundColor = UIColor(red: 25/255, green: 62/255, blue: 78/255, alpha: 1.0)
+        self.tableView.backgroundColor = UIColor(red: 25/255, green: 62/255, blue: 78/255, alpha: 1.0) /* #193e4e */
         // Custom Cell Formatting
-        cell.backgroundColor = UIColor(red: 161/255, green: 208/255, blue: 216/255, alpha: 0.5)
+        cell.backgroundColor = UIColor(red: 142/255, green: 184/255, blue: 72/255, alpha: 1.0) /* #8eb848 */
         cell.layer.cornerRadius = 7
-        cell.textLabel?.textColor =  UIColor(red: 142/255, green: 184/255, blue: 72/255, alpha: 1.0)
+        cell.textLabel?.textColor =  UIColor(red: 142/255, green: 184/255, blue: 72/255, alpha: 1.0) /* #8eb848 */
         cell.detailTextLabel?.textColor = UIColor(red: 142/255, green: 184/255, blue: 72/255, alpha: 1.0)
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero

@@ -142,7 +142,7 @@
         <!--Page View Controller-->
         <scene sceneID="CdJ-jF-IvP">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="omo-UX-A6c" customClass="PageViewController" customModule="IntelliChef" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="omo-UX-A6c" customClass="PageViewController" customModule="IntelliChef" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIA-1v-6jJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,13 +172,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggh-Yo-j5b">
-                                <rect key="frame" x="16" y="518" width="288" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonPress:" destination="NtU-4M-4mI" eventType="touchUpInside" id="hDA-Qz-BHD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -186,14 +179,15 @@
                             <constraint firstItem="BUx-uI-IMQ" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="4FN-8a-aLY"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="top" secondItem="74V-KV-1Ot" secondAttribute="bottom" constant="33" id="BcP-l2-dkQ"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="trailing" secondItem="Mon-YL-KCF" secondAttribute="trailingMargin" id="EM8-vk-sYL"/>
-                            <constraint firstItem="pMZ-pR-3eX" firstAttribute="top" secondItem="Ggh-Yo-j5b" secondAttribute="bottom" constant="20" id="N8Q-aa-Aco"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leadingMargin" id="Zil-1G-BIG"/>
                             <constraint firstItem="BUx-uI-IMQ" firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="chL-ma-t2m"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ggh-Yo-j5b" secondAttribute="trailing" id="f11-g9-oeZ"/>
                             <constraint firstAttribute="trailing" secondItem="BUx-uI-IMQ" secondAttribute="trailing" id="lxP-SW-dZE"/>
                             <constraint firstItem="pMZ-pR-3eX" firstAttribute="top" secondItem="BUx-uI-IMQ" secondAttribute="bottom" id="oyd-3e-sQP"/>
-                            <constraint firstItem="Ggh-Yo-j5b" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leadingMargin" id="xQz-Ux-7tD"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HTd-KL-A9f" appends="YES" id="TRV-Z4-0q8"/>
+                            <outletCollection property="gestureRecognizers" destination="YI3-np-cOr" appends="YES" id="Ahs-kx-xPc"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="B49-va-cbc"/>
                     <connections>
@@ -202,6 +196,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfh-AJ-gSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ggh-Yo-j5b">
+                    <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonPress:" destination="NtU-4M-4mI" eventType="touchUpInside" id="hDA-Qz-BHD"/>
+                    </connections>
+                </button>
+                <swipeGestureRecognizer direction="right" id="YI3-np-cOr" userLabel="Swipe Back">
+                    <connections>
+                        <action selector="swipeLeft:" destination="NtU-4M-4mI" id="Ucm-3T-xp7"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="HTd-KL-A9f" userLabel="Swipe Forwards">
+                    <connections>
+                        <action selector="swipeRight:" destination="NtU-4M-4mI" id="DbJ-Fm-4gB"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2482" y="128"/>
         </scene>
@@ -395,7 +407,6 @@
         <image name="title" width="76" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TGe-n1-x0V"/>
-        <segue reference="tsl-Nk-0bq"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>

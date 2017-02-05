@@ -7,25 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043B5B201E4589E8007A6581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B1F1E4589E8007A6581 /* AppDelegate.swift */; };
-		043B5B221E4589E8007A6581 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B211E4589E8007A6581 /* MasterViewController.swift */; };
-		043B5B241E4589E8007A6581 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B231E4589E8007A6581 /* DetailViewController.swift */; };
-		043B5B271E4589E9007A6581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B251E4589E9007A6581 /* Main.storyboard */; };
-		043B5B2C1E4589E9007A6581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B2A1E4589E9007A6581 /* LaunchScreen.storyboard */; };
-		043B5B341E458DE8007A6581 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B331E458DE8007A6581 /* Recipe.swift */; };
-		043B5B481E459EFF007A6581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B471E459EFF007A6581 /* Assets.xcassets */; };
+		043B5B5A1E45BCEF007A6581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B551E45BCEF007A6581 /* AppDelegate.swift */; };
+		043B5B5B1E45BCEF007A6581 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B561E45BCEF007A6581 /* DetailViewController.swift */; };
+		043B5B5C1E45BCEF007A6581 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B571E45BCEF007A6581 /* MasterViewController.swift */; };
+		043B5B5D1E45BCEF007A6581 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B581E45BCEF007A6581 /* Recipe.swift */; };
+		043B5B5F1E45BD13007A6581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B5E1E45BD13007A6581 /* LaunchScreen.storyboard */; };
+		043B5B611E45BD18007A6581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B601E45BD18007A6581 /* Main.storyboard */; };
+		043B5B731E45D16B007A6581 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043B5B721E45D16B007A6581 /* Media.xcassets */; };
+		EF7EBF8A1E46261500A2BFDA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7EBF891E46261500A2BFDA /* PageViewController.swift */; };
+		EF7EBF8E1E4628DF00A2BFDA /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7EBF8D1E4628DF00A2BFDA /* PageContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		043B5B1C1E4589E8007A6581 /* IntelliChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelliChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		043B5B1F1E4589E8007A6581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		043B5B211E4589E8007A6581 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		043B5B231E4589E8007A6581 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		043B5B261E4589E9007A6581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		043B5B2B1E4589E9007A6581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043B5B2D1E4589E9007A6581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		043B5B331E458DE8007A6581 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		043B5B471E459EFF007A6581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		043B5B551E45BCEF007A6581 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		043B5B561E45BCEF007A6581 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		043B5B571E45BCEF007A6581 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		043B5B581E45BCEF007A6581 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		043B5B5E1E45BD13007A6581 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		043B5B601E45BD18007A6581 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		043B5B721E45D16B007A6581 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		EF7EBF891E46261500A2BFDA /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		EF7EBF8D1E4628DF00A2BFDA /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +62,16 @@
 		043B5B1E1E4589E8007A6581 /* IntelliChef */ = {
 			isa = PBXGroup;
 			children = (
-				043B5B1F1E4589E8007A6581 /* AppDelegate.swift */,
-				043B5B211E4589E8007A6581 /* MasterViewController.swift */,
-				043B5B231E4589E8007A6581 /* DetailViewController.swift */,
-				043B5B251E4589E9007A6581 /* Main.storyboard */,
-				043B5B331E458DE8007A6581 /* Recipe.swift */,
-				043B5B471E459EFF007A6581 /* Assets.xcassets */,
-				043B5B2A1E4589E9007A6581 /* LaunchScreen.storyboard */,
+				043B5B551E45BCEF007A6581 /* AppDelegate.swift */,
+				043B5B601E45BD18007A6581 /* Main.storyboard */,
+				EF7EBF891E46261500A2BFDA /* PageViewController.swift */,
+				EF7EBF8D1E4628DF00A2BFDA /* PageContentViewController.swift */,
+				043B5B5E1E45BD13007A6581 /* LaunchScreen.storyboard */,
+				043B5B561E45BCEF007A6581 /* DetailViewController.swift */,
+				043B5B571E45BCEF007A6581 /* MasterViewController.swift */,
+				043B5B581E45BCEF007A6581 /* Recipe.swift */,
 				043B5B2D1E4589E9007A6581 /* Info.plist */,
+				043B5B721E45D16B007A6581 /* Media.xcassets */,
 			);
 			path = IntelliChef;
 			sourceTree = "<group>";
@@ -103,6 +109,7 @@
 					043B5B1B1E4589E8007A6581 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = V4JEZHQS9J;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -130,9 +137,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043B5B2C1E4589E9007A6581 /* LaunchScreen.storyboard in Resources */,
-				043B5B481E459EFF007A6581 /* Assets.xcassets in Resources */,
-				043B5B271E4589E9007A6581 /* Main.storyboard in Resources */,
+				043B5B5F1E45BD13007A6581 /* LaunchScreen.storyboard in Resources */,
+				043B5B731E45D16B007A6581 /* Media.xcassets in Resources */,
+				043B5B611E45BD18007A6581 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,33 +150,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043B5B241E4589E8007A6581 /* DetailViewController.swift in Sources */,
-				043B5B221E4589E8007A6581 /* MasterViewController.swift in Sources */,
-				043B5B201E4589E8007A6581 /* AppDelegate.swift in Sources */,
-				043B5B341E458DE8007A6581 /* Recipe.swift in Sources */,
+				043B5B5A1E45BCEF007A6581 /* AppDelegate.swift in Sources */,
+				EF7EBF8A1E46261500A2BFDA /* PageViewController.swift in Sources */,
+				043B5B5B1E45BCEF007A6581 /* DetailViewController.swift in Sources */,
+				EF7EBF8E1E4628DF00A2BFDA /* PageContentViewController.swift in Sources */,
+				043B5B5C1E45BCEF007A6581 /* MasterViewController.swift in Sources */,
+				043B5B5D1E45BCEF007A6581 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		043B5B251E4589E9007A6581 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				043B5B261E4589E9007A6581 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		043B5B2A1E4589E9007A6581 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				043B5B2B1E4589E9007A6581 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		043B5B2E1E4589E9007A6581 /* Debug */ = {
@@ -269,11 +259,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = V4JEZHQS9J;
 				INFOPLIST_FILE = IntelliChef/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joeymurphy.IntelliChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IntelliChef/IntelliChef-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -282,11 +275,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = V4JEZHQS9J;
 				INFOPLIST_FILE = IntelliChef/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joeymurphy.IntelliChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IntelliChef/IntelliChef-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -310,6 +305,7 @@
 				043B5B321E4589E9007A6581 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

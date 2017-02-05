@@ -9,37 +9,40 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var summary: UILabel!
+    @IBOutlet weak var prep: UILabel!
+    @IBOutlet weak var cook: UILabel!
+    
+    
+    var detailItem: Recipe? {
+        didSet {
+            configureView()
+        }
+    }
+    
     func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.name
+        debugPrint("Detail Item", detailItem?.name as Any)
+        if let detail = detailItem {
+            if let category = detailLabel {
+                self.navigationItem.title = detail.name
+                category.text = detail.name
+                summary.text = detail.summary
+                prep.text = "Prep time\n" + detail.prepTime
+                cook.text = "Cook Time\n" + detail.cookTime
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        configureView()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    var detailItem: Recipe? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
-
-
+    
 }
 

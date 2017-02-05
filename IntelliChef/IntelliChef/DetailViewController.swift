@@ -10,34 +10,41 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var summary: UILabel!
-    @IBOutlet weak var prep: UILabel!
-    @IBOutlet weak var cook: UILabel!
     
+    @IBOutlet weak var detailLabel: UILabel?
+    @IBOutlet weak var summary: UILabel?
+    @IBOutlet weak var prep: UILabel?
+    @IBOutlet weak var cook: UILabel?
     
-    var detailItem: Recipe? {
+    var detailArray: [Recipe]? {
         didSet {
-            configureView()
+            configureMealView()
         }
     }
-    
-    func configureView() {
-        debugPrint("Detail Item", detailItem?.name as Any)
-        if let detail = detailItem {
-            if let category = detailLabel {
-                self.navigationItem.title = detail.name
-                category.text = detail.name
-                summary.text = detail.summary
-                prep.text = "Prep time\n" + detail.prepTime
-                cook.text = "Cook Time\n" + detail.cookTime
+ 
+    func configureMealView() {
+        debugPrint("Detail: configureMealView()",detailArray as [Recipe]!)
+        let multiSummary = "" as NSMutableString
+        if (detailArray?.count)! > 1 {
+            for detail in detailArray! {
+                multiSummary.append(detail.name)
+                multiSummary.append("\n")
             }
+        }
+        for detail in detailArray! {
+            debugPrint("Detail Array", detail.name as Any)
+            //self.navigationItem.title = detail.name
+            detailLabel?.text = detail.name
+            debugPrint("Summary.text", summary?.text as Any)
+            summary?.text = detail.summary
+            prep?.text = "Prep time\n" + detail.prepTime
+            cook?.text = "Cook Time\n" + detail.cookTime
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
+        configureMealView()
     }
     
     override func didReceiveMemoryWarning() {

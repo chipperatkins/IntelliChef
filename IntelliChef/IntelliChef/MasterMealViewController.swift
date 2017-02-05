@@ -5,72 +5,38 @@
 //  Created by Joey Murphy on 2/3/17.
 //  Copyright © 2017 Joey Murphy. All rights reserved.
 //
-
+/*
 import UIKit
-import Foundation
 
-class MasterViewController: UITableViewController {
+class MasterMealViewController: UITableViewController {
     
     // MARK: - Properties
     let searchController = UISearchController(searchResultsController: nil)
-    var detailViewController: DetailViewController? = nil
+    var detailMealViewController: DetailMealViewController? = nil
     var recipes = [Recipe]()
     var filteredRecipes = [Recipe]()
     var addedRecipes = [Recipe]()
-
+    
     
     // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
         
         searchController.searchBar.searchBarStyle = UISearchBarStyle(rawValue: 2)!
         self.tableView.allowsMultipleSelection = true
         
         if let splitViewController = splitViewController {
             let controllers = splitViewController.viewControllers
-            let controllersMeal = splitViewController.viewControllers
-            detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? DetailViewController
-            detailViewController = (controllersMeal[controllersMeal.count - 1] as! UINavigationController).topViewController as? DetailViewController
+            detailMealViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? DetailMealViewController
         }
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-    
-        let config = URLSessionConfiguration.default // Session Configuration
-        let session = URLSession(configuration: config) // Load configuration into Session
-        let url = URL(string: "http://10.10.224.115:80/getRecipeList.php")!
         
-        let task = session.dataTask(with: url, completionHandler: {
-            (data, response, error) in
-            
-            if error != nil {
-                print(error!.localizedDescription)
-                
-            } else {
-                
-                do {
-                    
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]]
-                    {
-                        //Implement your logic
-                        print(json)
-                        
-                    }
-                    
-                } catch {
-                    
-                    print("error in JSONSerialization")
-                    
-                }
-                
-                
-            }
-            
-        })
-        task.resume()
         
-        /*recipes = [
+        recipes = [
             Recipe(category:"Entree", name:"Spaghetti"),
             Recipe(category:"Appetizer", name:"Garlic Bread"),
             Recipe(category:"Dessert", name:"Tiramisu"),
@@ -90,10 +56,8 @@ class MasterViewController: UITableViewController {
             Recipe(category:"Appetizer", name:"Apple Pie"),
             Recipe(category:"Dessert", name:"Pumpkin PIe")
             
-        ]*/
+        ]
     }
-    
-    // modify the request as necessary, if necessary
     
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
@@ -126,8 +90,8 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.accessoryType = cell.isSelected ? .checkmark : .none
-        cell.selectionStyle = .none // to prevent cells from being "highlighted
+        //cell.accessoryType = cell.isSelected ? .checkmark : .none
+        //cell.selectionStyle = .none // to prevent cells from being "highlighted
         let recipe: Recipe
         if searchController.isActive && searchController.searchBar.text != "" {
             recipe = filteredRecipes[indexPath.row]
@@ -187,20 +151,18 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        debugPrint("didSelectRowAt called")
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         if searchController.isActive && searchController.searchBar.text != "" {
             addedRecipes.append(filteredRecipes[indexPath.row])
-            debugPrint("filtered recipe added", addedRecipes.count)
+            debugPrint("filtered recipe added")
         } else {
             addedRecipes.append(recipes[indexPath.row])
-            debugPrint("recipe added", addedRecipes.count)
+            debugPrint("recipe added")
         }
         
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        debugPrint("didDeselectRowAt called")
         var d = -1
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
         if searchController.isActive && searchController.searchBar.text != "" {
@@ -227,57 +189,38 @@ class MasterViewController: UITableViewController {
                 }
             }) == true && d != -1{
                 debugPrint("recipe removed")
-                if addedRecipes.count > 0 {
-                    addedRecipes.remove(at: d)
-                }
+                addedRecipes.remove(at: d)
             } else {
                 debugPrint("no recipe removed")
             }
             
         }
     }
-    
-    
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        debugPrint("Segue:", segue.identifier as Any)
-        if segue.identifier == "showDetail" {
+        debugPrint("Meal Segue:", segue.identifier as Any)
+        if segue.identifier == "beginMeal" {
             debugPrint("Segue not nil")
-            if let indexPath = tableView.indexPathForSelectedRow {
-                debugPrint(indexPath)
-                //var recipe: Recipe// = Recipe(category: "nah", name: "nope")
-                if searchController.isActive && searchController.searchBar.text != "" {
-                    addedRecipes.append(filteredRecipes[indexPath.row])
-                } else {
-                    addedRecipes.append(recipes[indexPath.row])
-                }
-                
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                debugPrint("Master add array")
-                controller.detailArray = addedRecipes
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+            let controller = (segue.destination as! UINavigationController).topViewController as! DetailMealViewController
+            for recipe in addedRecipes {
+                debugPrint("Recipe",recipe)
             }
-        } else {
-            if segue.identifier == "beginMeal" {
-                debugPrint("Segue not nil")
-                let controllerMeal = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                for recipe in addedRecipes {
-                    debugPrint("Recipe",recipe)
-                }
-                controllerMeal.detailArray = addedRecipes
-                controllerMeal.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controllerMeal.navigationItem.leftItemsSupplementBackButton = true
-            }
+            controller.detailArray = addedRecipes
+            controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+            controller.navigationItem.leftItemsSupplementBackButton = true
         }
-        
     }
+    
 }
 
-extension MasterViewController: UISearchResultsUpdating {
+
+
+extension MasterMealViewController: UISearchResultsUpdating {
     @available(iOS 8.0, *)
     public func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)
     }
     
 }
+ 
+ */

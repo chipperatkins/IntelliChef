@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +30,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="-657"/>
+            <point key="canvasLocation" x="0.0" y="-657"/>
         </scene>
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
@@ -148,7 +147,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIA-1v-6jJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="124"/>
+            <point key="canvasLocation" x="1703" y="129"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="MoH-bv-Dim">
@@ -163,33 +162,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CmI-1Y-zah">
-                                <rect key="frame" x="16" y="53" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="53" width="288" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="24" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ACb-9f-pFU">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20"/>
                                         <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.5568627451" green="0.72156862749999995" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3n-lR-dDw" userLabel="Timer">
+                                        <rect key="frame" x="0.0" y="20" width="288" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.5568627451" green="0.72156862749999995" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ACb-9f-pFU" firstAttribute="top" secondItem="CmI-1Y-zah" secondAttribute="top" id="5sR-RJ-fZ6"/>
-                                    <constraint firstAttribute="trailing" secondItem="ACb-9f-pFU" secondAttribute="trailing" id="740-lY-F6r"/>
-                                    <constraint firstItem="ACb-9f-pFU" firstAttribute="leading" secondItem="CmI-1Y-zah" secondAttribute="leading" id="pCC-ty-EOA"/>
+                                    <constraint firstAttribute="bottom" secondItem="ACb-9f-pFU" secondAttribute="bottom" constant="20" symbolic="YES" id="arx-vK-wnk"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.098039215690000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="4FN-8a-aLY"/>
-                            <constraint firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="BTu-hU-SFC"/>
-                            <constraint firstItem="ACb-9f-pFU" firstAttribute="top" secondItem="74V-KV-1Ot" secondAttribute="bottom" constant="33" id="BcP-l2-dkQ"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="trailing" secondItem="Mon-YL-KCF" secondAttribute="trailingMargin" id="EM8-vk-sYL"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leadingMargin" id="Zil-1G-BIG"/>
-                            <constraint firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="chL-ma-t2m"/>
-                            <constraint firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="gWG-GR-mxb"/>
+                            <constraint firstItem="CmI-1Y-zah" firstAttribute="top" secondItem="74V-KV-1Ot" secondAttribute="bottom" constant="33" id="bN1-vs-daa"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="HTd-KL-A9f" appends="YES" id="TRV-Z4-0q8"/>
@@ -199,6 +198,7 @@
                     <navigationItem key="navigationItem" id="B49-va-cbc"/>
                     <connections>
                         <outlet property="label" destination="ACb-9f-pFU" id="bgb-fq-stm"/>
+                        <outlet property="timerLabel" destination="H3n-lR-dDw" id="WIe-dA-S2p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfh-AJ-gSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,7 +221,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2321.25" y="98.239436619718305"/>
+            <point key="canvasLocation" x="2554" y="129"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -236,7 +236,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-856" y="-330"/>
+            <point key="canvasLocation" x="-932" y="-288"/>
         </scene>
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
@@ -299,7 +299,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="-657"/>
+            <point key="canvasLocation" x="803" y="-657"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -329,7 +329,7 @@
                     </textAttributes>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="-45" y="129"/>
+            <point key="canvasLocation" x="0.0" y="129"/>
         </scene>
         <!--MasterMeal-->
         <scene sceneID="Ewm-1F-prA">
@@ -351,7 +351,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHx-De-J0i" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="-1553"/>
+            <point key="canvasLocation" x="1703" y="-1455"/>
         </scene>
         <!--DetailMeal-->
         <scene sceneID="1Em-oj-AFq">
@@ -424,6 +424,7 @@
                         <constraints>
                             <constraint firstItem="8vC-Vr-RyX" firstAttribute="trailing" secondItem="0ol-YZ-mrV" secondAttribute="trailing" id="0zF-a0-djH"/>
                             <constraint firstAttribute="trailing" secondItem="0ol-YZ-mrV" secondAttribute="trailing" id="0zp-R9-Wnp"/>
+                            <constraint firstItem="8vC-Vr-RyX" firstAttribute="top" secondItem="4px-5D-mlH" secondAttribute="bottom" id="218-uQ-iFv"/>
                             <constraint firstItem="0ol-YZ-mrV" firstAttribute="leading" secondItem="XVI-gb-nsc" secondAttribute="leading" id="2yM-fy-2Pt"/>
                             <constraint firstItem="Lhg-mp-k6Z" firstAttribute="leading" secondItem="XVI-gb-nsc" secondAttribute="leadingMargin" id="3q6-uq-db3"/>
                             <constraint firstItem="Lhg-mp-k6Z" firstAttribute="trailing" secondItem="XVI-gb-nsc" secondAttribute="trailingMargin" id="9Pu-fy-rv7"/>
@@ -432,7 +433,6 @@
                             <constraint firstItem="FSr-Df-bbZ" firstAttribute="top" secondItem="0ol-YZ-mrV" secondAttribute="bottom" constant="8" id="Tek-lh-Bwf"/>
                             <constraint firstItem="0ol-YZ-mrV" firstAttribute="centerX" secondItem="XVI-gb-nsc" secondAttribute="centerX" id="W7A-AY-dJU"/>
                             <constraint firstItem="8vC-Vr-RyX" firstAttribute="leading" secondItem="0ol-YZ-mrV" secondAttribute="leading" id="Zwi-n1-7cl"/>
-                            <constraint firstItem="8vC-Vr-RyX" firstAttribute="top" secondItem="4px-5D-mlH" secondAttribute="bottom" id="edB-Wr-6en"/>
                             <constraint firstItem="3sG-gz-NOW" firstAttribute="trailing" secondItem="XVI-gb-nsc" secondAttribute="trailingMargin" id="i0f-wG-h3S"/>
                             <constraint firstItem="eDR-CR-WJh" firstAttribute="top" secondItem="Lhg-mp-k6Z" secondAttribute="bottom" constant="20" id="j86-yx-iY6"/>
                             <constraint firstItem="0ol-YZ-mrV" firstAttribute="top" secondItem="8vC-Vr-RyX" secondAttribute="bottom" constant="8" id="jfY-Zw-FqK"/>
@@ -458,7 +458,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="3283" y="-758"/>
+            <point key="canvasLocation" x="2554" y="-658"/>
         </scene>
         <!--MasterMeal-->
         <scene sceneID="oq0-Fs-KkE">
@@ -525,7 +525,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOc-12-dnO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="-1554"/>
+            <point key="canvasLocation" x="2554" y="-1454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RJB-YW-MNf">
@@ -545,15 +545,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3f-Cz-2vz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="-758"/>
+            <point key="canvasLocation" x="1703" y="-657"/>
         </scene>
     </scenes>
     <resources>
         <image name="title" width="76" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tsl-Nk-0bq"/>
-        <segue reference="TGe-n1-x0V"/>
+        <segue reference="Tll-UG-LXB"/>
+        <segue reference="Rlu-u5-877"/>
         <segue reference="utn-za-UFj"/>
     </inferredMetricsTieBreakers>
 </document>

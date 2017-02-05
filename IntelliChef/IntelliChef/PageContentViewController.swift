@@ -12,8 +12,21 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
 
  
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
-
+    var timer = Timer()
+    var time = 100;
+    var hastimer = false
+    func decreaseTimer() {
+        if time > 0 {
+            time -= 1
+            timerLabel.text = String(time)
+        } else {
+            timer.invalidate()
+        }
+    }
+    
+    
     var pageIndex: Int = 0
     
     var strTitle: String!
@@ -24,6 +37,7 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     
     @IBAction func swipeLeft(_ sender: Any) {
         delegator?.actionLeft(pageContentViewController: self)
+        //check step, if has timer set hasTimer = true
     }
     @IBAction func swipeRight(_ sender: Any) {
         delegator?.actionRight(pageContentViewController: self)
@@ -32,11 +46,13 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     //    delegator?.actionRight(pageContentViewController: self)
     //}
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        label.text = strTitle + " This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up movin on. This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up"
+        //check if hasTimer
+        //instastiate it and call decreaseTimer, set hasTimer to false, time should continue on each screen
+        if !hastimer {decreaseTimer()
+            hastimer = true}
+        label.text = strTitle + " This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up movin on. This is a test string. Some of them wwant to be abused. OOOOOOOOOO. Sweet dreams are made of these. ooooooooooo. keep your head up This is a test string. Some of them"
         //image.image = UIImage(named: strPhotoName)
         // Do any additional setup after loading the view.
     }

@@ -24,7 +24,13 @@ class DetailViewController: UIViewController {
  
     func configureMealView() {
         debugPrint("Detail: configureMealView()",detailArray as [Recipe]!)
-        
+        let multiSummary = "" as NSMutableString
+        if (detailArray?.count)! > 1 {
+            for detail in detailArray! {
+                multiSummary.append(detail.name)
+                multiSummary.append("\n")
+            }
+        }
         for detail in detailArray! {
             debugPrint("Detail Array", detail.name as Any)
             //self.navigationItem.title = detail.name

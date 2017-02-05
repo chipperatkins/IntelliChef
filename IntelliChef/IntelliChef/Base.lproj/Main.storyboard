@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -162,10 +163,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CmI-1Y-zah">
-                                <rect key="frame" x="16" y="20" width="288" height="540"/>
+                                <rect key="frame" x="16" y="53" width="288" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="24" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ACb-9f-pFU">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="540"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.5568627451" green="0.72156862749999995" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -182,17 +183,13 @@
                         <color key="backgroundColor" red="0.098039215690000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="BUx-uI-IMQ" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="4FN-8a-aLY"/>
-                            <constraint firstItem="BUx-uI-IMQ" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="BTu-hU-SFC"/>
+                            <constraint firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="4FN-8a-aLY"/>
+                            <constraint firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leading" id="BTu-hU-SFC"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="top" secondItem="74V-KV-1Ot" secondAttribute="bottom" constant="33" id="BcP-l2-dkQ"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="trailing" secondItem="Mon-YL-KCF" secondAttribute="trailingMargin" id="EM8-vk-sYL"/>
-                            <constraint firstAttribute="trailing" secondItem="BUx-uI-IMQ" secondAttribute="trailing" id="K1a-qJ-Ivs"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leadingMargin" id="Zil-1G-BIG"/>
-                            <constraint firstItem="pMZ-pR-3eX" firstAttribute="top" secondItem="BUx-uI-IMQ" secondAttribute="bottom" id="c0K-yp-bm2"/>
-                            <constraint firstItem="BUx-uI-IMQ" firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="chL-ma-t2m"/>
-                            <constraint firstItem="BUx-uI-IMQ" firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="gWG-GR-mxb"/>
-                            <constraint firstAttribute="trailing" secondItem="BUx-uI-IMQ" secondAttribute="trailing" id="lxP-SW-dZE"/>
-                            <constraint firstItem="pMZ-pR-3eX" firstAttribute="top" secondItem="BUx-uI-IMQ" secondAttribute="bottom" id="oyd-3e-sQP"/>
+                            <constraint firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="chL-ma-t2m"/>
+                            <constraint firstAttribute="top" secondItem="Mon-YL-KCF" secondAttribute="top" id="gWG-GR-mxb"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="HTd-KL-A9f" appends="YES" id="TRV-Z4-0q8"/>

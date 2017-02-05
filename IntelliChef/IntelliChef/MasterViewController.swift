@@ -99,7 +99,6 @@ class MasterViewController: UITableViewController {
          Recipe(category:"Dessert", name:"Pumpkin PIe")
          
          ]*/
-        recipes.append(Recipe(category: "Test", name: "test"))
     }
     
     // modify the request as necessary, if necessary

@@ -1,14 +1,14 @@
 //
-//  MasterViewController.swift
+//  MealViewController.swift
 //  IntelliChef
 //
-//  Created by Joey Murphy on 2/3/17.
+//  Created by Joey Murphy on 2/4/17.
 //  Copyright © 2017 Joey Murphy. All rights reserved.
 //
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MealViewController: UITableViewController {
     
     // MARK: - Properties
     let searchController = UISearchController(searchResultsController: nil)
@@ -16,18 +16,13 @@ class MasterViewController: UITableViewController {
     var recipes = [Recipe]()
     var filteredRecipes = [Recipe]()
     var makeMeal = false
-    
-    
-    @IBAction func meal(_ sender: UIBarButtonItem) {
-        
-        
-    }
+
     
     // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.reloadData()
         searchController.searchBar.searchBarStyle = UISearchBarStyle(rawValue: 2)!
         self.tableView.allowsMultipleSelection = true
         
@@ -94,7 +89,7 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath)
         cell.accessoryType = cell.isSelected ? .checkmark : .none
         cell.selectionStyle = .none // to prevent cells from being "highlighted
         let recipe: Recipe
@@ -154,7 +149,7 @@ class MasterViewController: UITableViewController {
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
     }
-    /*
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if makeMeal {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
@@ -163,14 +158,14 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if makeMeal {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
         }
     }
-    */
+    /*
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         debugPrint("Segue:", segue.identifier as Any)
-        
+        if !makeMeal {
             if segue.identifier == "showDetail" {
                 debugPrint("Segue after if: ", segue.identifier as Any)
                 if let indexPath = tableView.indexPathForSelectedRow {
@@ -191,11 +186,12 @@ class MasterViewController: UITableViewController {
                     controller.navigationItem.leftItemsSupplementBackButton = true
                 }
             }
-        
+        }
     }
+ */
 }
 
-extension MealViewController: UISearchResultsUpdating {
+extension MasterViewController: UISearchResultsUpdating {
     @available(iOS 8.0, *)
     public func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)

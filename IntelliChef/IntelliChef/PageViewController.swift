@@ -16,12 +16,12 @@ class PageViewController: UIPageViewController
     var arrPagePhoto: NSArray = NSArray()
     var arrTimer: [Float] = []
     var nextViewController: PageContentViewController?
-    var timerManager = TimerManager()
+    //var timerManager = TimerManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerManager.sharedInstance.start(time: 100)
+        //timerManager.sharedInstance.start(time: 100)
         arrPageTitle = ["Step 1: Gather Ingredients", "Step 2: Follow the nicely written, interactive steps", "Step 3: Enjoy your meal!", "Step 4: Tell your friends about Intellichef"];
         arrPagePhoto = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
         arrTimer = [100.0, 100.0, 100.0, 100.0]
@@ -88,7 +88,7 @@ class PageViewController: UIPageViewController
         pageContentViewController.strPhotoName = "\(arrPagePhoto[index])"
         pageContentViewController.pageIndex = index
         //let checkTime = arrTimer[index]
-        pageContentViewController.time = Int(timerManager.time)
+        //pageContentViewController.time = Int(timerManager.time)
         //var count = 0
         print(index)
         //if checkTime > 0 && count == 0{

@@ -11,18 +11,19 @@ import UIKit
 class PageContentViewController: UIViewController, PageViewControllerDelegate {
 
  
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var timerLabel: UILabel!
     
-    public var delegateTimerLabel: Float!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var label: UILabel!
+    
     var pageIndex: Int = 0
-    //var timerManager = TimerManager()
+
     var strTitle: String!
     var strPhotoName: String!
-    var time: Int = 0
+    var seconds: Int = 3600 //seconds
     
     
     var delegator: PageViewController?
+    var timer = Timer()
     
     
     @IBAction func swipeLeft(_ sender: Any) {
@@ -32,17 +33,41 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     @IBAction func swipeRight(_ sender: Any) {
         delegator?.actionRight(pageContentViewController: self)
     }
-    //@IBAction func buttonPress(_ sender: UIButton) { Button implementation for right
-    //    delegator?.actionRight(pageContentViewController: self)
-    //}
+    
+    @IBAction func start(_ sender: Any) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(PageContentViewController.counter), userInfo: nil, repeats: true)
+    }
+    
+    func counter(){
+        seconds -= 1
+        timerLabel.text = self.toString(seconds)
+        
+        if (seconds == 0){
+            timer.invalidate()
+        }
+    }
+    
+    func toString(_ seconds: Int) -> String{
+        var r = ""
+        var min = Int(seconds/60)
+        let sec = Int(seconds % 60)
+        var hour = 0
+        if (min >= 60){
+            hour = min/60
+            min = min % 60
+        }
+        
+        if (hour == 0) {r += String(min) + ":" + String(sec)}
+        else {r += String(format: "%02d", hour) + ":" + String(format: "%02d",min) + ":" + String(format: "%02d",sec)}
+        
+        return r
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //timerManager.sharedInstance.start(time: 100)
-        timerLabel.text = "Timer: 00:00"
-        //check if hasTimer
-        //instastiate it and call decreaseTimer, set hasTimer to false, time should continue on each screen
+        
         label.text = strTitle
+        timerLabel.text = self.toString(seconds)
         //image.image = UIImage(named: strPhotoName)
         // Do any additional setup after loading the view.
     }
@@ -52,10 +77,7 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func didFinishTask(sender: PageViewController) {
-        
-
-    }
+    func didFinishTask(sender: PageViewController) {} //for protocol delegator
 
     /*
     // MARK: - Navigation

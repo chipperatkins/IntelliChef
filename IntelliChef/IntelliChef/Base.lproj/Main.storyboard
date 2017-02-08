@@ -165,6 +165,25 @@
         <!--Page Content View Controller-->
         <scene sceneID="MoH-bv-Dim">
             <objects>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ggh-Yo-j5b">
+                    <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonPress:" destination="NtU-4M-4mI" eventType="touchUpInside" id="hDA-Qz-BHD"/>
+                    </connections>
+                </button>
+                <swipeGestureRecognizer direction="left" id="HTd-KL-A9f" userLabel="Swipe Forwards">
+                    <connections>
+                        <action selector="swipeRight:" destination="NtU-4M-4mI" id="DbJ-Fm-4gB"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="YI3-np-cOr" userLabel="Swipe Back">
+                    <connections>
+                        <action selector="swipeLeft:" destination="NtU-4M-4mI" id="Ucm-3T-xp7"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfh-AJ-gSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PageContentViewController" id="NtU-4M-4mI" customClass="PageContentViewController" customModule="IntelliChef" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="74V-KV-1Ot"/>
@@ -175,46 +194,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CmI-1Y-zah">
-                                <rect key="frame" x="16" y="53" width="288" height="40"/>
+                                <rect key="frame" x="16" y="53" width="288" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="24" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ACb-9f-pFU">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.5568627451" green="0.72156862749999995" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer: 00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3n-lR-dDw" userLabel="Timer">
-                                        <rect key="frame" x="0.0" y="20" width="288" height="20"/>
-                                        <color key="backgroundColor" red="0.5568627451" green="0.72156862749999995" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.098039215690000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBorder" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="ACb-9f-pFU" secondAttribute="bottom" constant="20" symbolic="YES" id="arx-vK-wnk"/>
-                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-3s-sBA">
-                                <rect key="frame" x="16" y="518" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.5568627451" green="0.72156862749999995" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.098039215690000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgr-ag-Jtb">
+                                <rect key="frame" x="99" y="95" width="122.5" height="54"/>
+                                <color key="backgroundColor" red="0.55780053139999997" green="0.72312861679999996" blue="0.28174546360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" red="0.95049315690994263" green="0.92312639951705933" blue="0.81080883741378784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APo-zU-Con">
+                                <rect key="frame" x="124" y="166" width="72" height="30"/>
+                                <color key="backgroundColor" red="0.95049315690994263" green="0.92312639951705933" blue="0.81080883741378784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="F5s-uZ-O9k"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.099347837270000003" green="0.24401849510000001" blue="0.30448687079999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBound" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="start:" destination="NtU-4M-4mI" eventType="touchUpInside" id="wM6-5a-aK3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.098039215690000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -222,7 +236,11 @@
                         <constraints>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="trailing" secondItem="Mon-YL-KCF" secondAttribute="trailingMargin" id="EM8-vk-sYL"/>
                             <constraint firstItem="ACb-9f-pFU" firstAttribute="leading" secondItem="Mon-YL-KCF" secondAttribute="leadingMargin" id="Zil-1G-BIG"/>
+                            <constraint firstItem="bgr-ag-Jtb" firstAttribute="centerX" secondItem="Mon-YL-KCF" secondAttribute="centerX" id="aQJ-yG-vjb"/>
                             <constraint firstItem="CmI-1Y-zah" firstAttribute="top" secondItem="74V-KV-1Ot" secondAttribute="bottom" constant="33" id="bN1-vs-daa"/>
+                            <constraint firstItem="APo-zU-Con" firstAttribute="top" secondItem="bgr-ag-Jtb" secondAttribute="bottom" constant="17" id="eef-6y-5ex"/>
+                            <constraint firstItem="APo-zU-Con" firstAttribute="centerX" secondItem="Mon-YL-KCF" secondAttribute="centerX" id="g1K-h3-rzN"/>
+                            <constraint firstItem="bgr-ag-Jtb" firstAttribute="top" secondItem="CmI-1Y-zah" secondAttribute="bottom" constant="21.5" id="lSO-Iw-1dR"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="HTd-KL-A9f" appends="YES" id="TRV-Z4-0q8"/>
@@ -232,28 +250,10 @@
                     <navigationItem key="navigationItem" id="B49-va-cbc"/>
                     <connections>
                         <outlet property="label" destination="ACb-9f-pFU" id="bgb-fq-stm"/>
-                        <outlet property="timerLabel" destination="H3n-lR-dDw" id="WIe-dA-S2p"/>
+                        <outlet property="timer" destination="bgr-ag-Jtb" id="pNe-eY-R2V"/>
+                        <outlet property="timerLabel" destination="bgr-ag-Jtb" id="5BJ-dE-hC8"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vfh-AJ-gSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ggh-Yo-j5b">
-                    <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="buttonPress:" destination="NtU-4M-4mI" eventType="touchUpInside" id="hDA-Qz-BHD"/>
-                    </connections>
-                </button>
-                <swipeGestureRecognizer direction="right" id="YI3-np-cOr" userLabel="Swipe Back">
-                    <connections>
-                        <action selector="swipeLeft:" destination="NtU-4M-4mI" id="Ucm-3T-xp7"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="HTd-KL-A9f" userLabel="Swipe Forwards">
-                    <connections>
-                        <action selector="swipeRight:" destination="NtU-4M-4mI" id="DbJ-Fm-4gB"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2553.75" y="128.87323943661971"/>
         </scene>

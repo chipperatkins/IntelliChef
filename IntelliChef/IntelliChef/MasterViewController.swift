@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Alamofire
 
 class MasterViewController: UITableViewController {
     
@@ -36,48 +37,55 @@ class MasterViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        
+        /*
         let config = URLSessionConfiguration.default // Session Configuration
         let session = URLSession(configuration: config) // Load configuration into Session
         let url = URL(string: "http://10.10.224.115:80/getRecipeList.php")!
         
         let task = session.dataTask(with: url, completionHandler:
             {
-            (data, response, error) in
-            
-            if error != nil {
-                print(error!.localizedDescription)
+                (data, response, error) in
                 
-            } else {
-                
-                do {
+                if error != nil {
+                    print(error!.localizedDescription)
                     
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]]
-                    {
+                } else {
+                    
+                    do {
                         
-                        print(json)
-                        for i in 0..<json.count {
-                            print(json[i])
-                            self.recipes.append(Recipe(id: json[i]["recipeID"] as! String, name: json[i]["name"] as! String, prep: (prep: json[i]["prepEst"] as! String) + " minutes", cook: (cook: json[i]["cookEst"] as! String) + " minutes"))
+                        if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]]
+                        {
+                            
+                            print(json)
+                            for i in 0..<json.count {
+                                print(json[i])
+                                self.recipes.append(Recipe(id: json[i]["recipeID"] as! String, name: json[i]["name"] as! String, prep: (prep: json[i]["prepEst"] as! String) + " minutes", cook: (cook: json[i]["cookEst"] as! String) + " minutes"))
+                            }
+                            
+                            DispatchQueue.main.sync(execute: {
+                                self.tableView.reloadData()
+                            })
                         }
                         
-                        DispatchQueue.main.sync(execute: {
-                            self.tableView.reloadData()
-                        })
+                    } catch {
+                        
+                        print("error in JSONSerialization")
+                        
                     }
                     
-                } catch {
-                    
-                    print("error in JSONSerialization")
                     
                 }
                 
-                
-            }
-            
         })
         task.resume()
+        */
+        // MARK: Alamofire HTTP Networking
+        getInitialRecipeInfo (completion: { (recipes) in
+            self.recipes = recipes
+            self.tableView.reloadData()
+        })
         
+        /*
         recipes = [
             Recipe(id: "aaaa", name: "Spaghetti", prep:"10", cook:"10"),
             Recipe(id: "bbbb", name: "Garlic Bread", prep:"15", cook:"10"),
@@ -90,9 +98,10 @@ class MasterViewController: UITableViewController {
             Recipe(id: "iiii", name: "Pumpkin Pie", prep: "0", cook:"5"),
             Recipe(id: "jjjj", name: "Ice Cream Sundae", prep:"10", cook:"20"),
             Recipe(id: "kkkk", name: "Ceaser Salad", prep:"16", cook:"15"),
-         ]
+        ]
+ */
     }
-    
+ 
     // modify the request as necessary, if necessary
     
     override func viewWillAppear(_ animated: Bool) {
@@ -279,5 +288,36 @@ extension MasterViewController: UISearchResultsUpdating {
     public func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)
     }
-    
 }
+
+extension MasterViewController {
+    func getInitialRecipeInfo(completion: @escaping (_ Recipes: [Recipe]) -> Void) {
+        Alamofire.request(
+            URL(string: "http://10.10.224.115:80/getRecipeList.php")!,
+            method: .get)
+            .validate()
+            .responseJSON { (response) -> Void in
+                guard response.result.isSuccess else {
+                    print("Error while fetching initial recipes: \(response.result.error)")
+                    completion([])
+                    return
+                }
+                
+                guard let responseJSON = response.result.value as? [String: Any],
+                    let results = responseJSON["recipe"] as? [[String: Any]],
+                    let firstObject = results.first,
+                    let recipeAndData = firstObject["name"] as? [[String: Any]] else {
+                        print("Malformed data received from initial recipes service")
+                        completion([])
+                        return
+                }
+                
+                let recipes = recipeAndData.flatMap({ recipeDict in
+                    return recipeDict["id"] as? Recipe
+                })
+                
+                completion(recipes)
+        }
+    }
+}
+

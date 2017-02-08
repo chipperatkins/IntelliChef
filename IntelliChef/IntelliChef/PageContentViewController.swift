@@ -16,7 +16,7 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     
     public var delegateTimerLabel: Float!
     var pageIndex: Int = 0
-    var timerManager = TimerManager()
+    //var timerManager = TimerManager()
     var strTitle: String!
     var strPhotoName: String!
     var time: Int = 0
@@ -38,7 +38,7 @@ class PageContentViewController: UIViewController, PageViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerManager.sharedInstance.start(time: 100)
+        //timerManager.sharedInstance.start(time: 100)
         timerLabel.text = "Timer: 00:00"
         //check if hasTimer
         //instastiate it and call decreaseTimer, set hasTimer to false, time should continue on each screen

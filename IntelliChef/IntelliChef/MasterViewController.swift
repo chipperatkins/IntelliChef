@@ -78,27 +78,19 @@ class MasterViewController: UITableViewController {
         })
         task.resume()
         
-        /*recipes = [
-         Recipe(category:"Entree", name:"Spaghetti"),
-         Recipe(category:"Appetizer", name:"Garlic Bread"),
-         Recipe(category:"Dessert", name:"Tiramisu"),
-         Recipe(category:"Entree", name:"Burger"),
-         Recipe(category:"Appetizer", name:"Wings"),
-         Recipe(category:"Dessert", name:"Vanilla Sundae"),
-         Recipe(category:"Entree", name:"Chicken"),
-         Recipe(category:"Appetizer", name:"Ceaser Salad"),
-         Recipe(category:"Dessert", name:"Greek Yogurt"),
-         Recipe(category:"Entree", name:"Mac & Cheese"),
-         Recipe(category:"Appetizer", name:"Shrimp Fried Rice"),
-         Recipe(category:"Dessert", name:"Bread Pudding"),
-         Recipe(category:"Entree", name:"Potato Salad"),
-         Recipe(category:"Appetizer", name:"Cole Slaw"),
-         Recipe(category:"Dessert", name:"Homemade Potato Chips"),
-         Recipe(category:"Entree", name:"Steak"),
-         Recipe(category:"Appetizer", name:"Apple Pie"),
-         Recipe(category:"Dessert", name:"Pumpkin PIe")
-         
-         ]*/
+        recipes = [
+            Recipe(id: "aaaa", name: "Spaghetti", prep:"10", cook:"10"),
+            Recipe(id: "bbbb", name: "Garlic Bread", prep:"15", cook:"10"),
+            Recipe(id: "cccc", name: "Tiramisu", prep:"10", cook:"10"),
+            Recipe(id: "dddd", name: "Mac & Cheese", prep:"14", cook:"11"),
+            Recipe(id: "eeee", name: "Bread Pudding", prep:"10", cook:"10"),
+            Recipe(id: "ffff", name: "Potato Salad", prep:"5", cook:"12"),
+            Recipe(id: "gggg", name: "Cole Slaw", prep:"10", cook:"43"),
+            Recipe(id: "hhhh", name: "Apple Pie", prep:"10", cook:"23"),
+            Recipe(id: "iiii", name: "Pumpkin Pie", prep: "0", cook:"5"),
+            Recipe(id: "jjjj", name: "Ice Cream Sundae", prep:"10", cook:"20"),
+            Recipe(id: "kkkk", name: "Ceaser Salad", prep:"16", cook:"15"),
+         ]
     }
     
     // modify the request as necessary, if necessary

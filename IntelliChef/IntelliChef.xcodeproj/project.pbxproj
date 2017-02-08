@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03101F3A2CF4F28FC3C1ABF7 /* Pods_IntelliChef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B300F94C146A7D532530B0 /* Pods_IntelliChef.framework */; };
 		043B5B5A1E45BCEF007A6581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B551E45BCEF007A6581 /* AppDelegate.swift */; };
 		043B5B5B1E45BCEF007A6581 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B561E45BCEF007A6581 /* DetailViewController.swift */; };
 		043B5B5C1E45BCEF007A6581 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B5B571E45BCEF007A6581 /* MasterViewController.swift */; };
@@ -28,6 +29,9 @@
 		043B5B5E1E45BD13007A6581 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043B5B601E45BD18007A6581 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		043B5B721E45D16B007A6581 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		71B300F94C146A7D532530B0 /* Pods_IntelliChef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelliChef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED6787A843D5D195D038FA3 /* Pods-IntelliChef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelliChef.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IntelliChef/Pods-IntelliChef.debug.xcconfig"; sourceTree = "<group>"; };
+		AEEEAEEDB014C473F4F9C095 /* Pods-IntelliChef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelliChef.release.xcconfig"; path = "Pods/Target Support Files/Pods-IntelliChef/Pods-IntelliChef.release.xcconfig"; sourceTree = "<group>"; };
 		EF7EBF891E46261500A2BFDA /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		EF7EBF8D1E4628DF00A2BFDA /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03101F3A2CF4F28FC3C1ABF7 /* Pods_IntelliChef.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				043B5B1E1E4589E8007A6581 /* IntelliChef */,
 				043B5B1D1E4589E8007A6581 /* Products */,
+				A969C73EEDC44364C3566AB4 /* Pods */,
+				7865A841A3D9FE75E044B4E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,23 @@
 			path = IntelliChef;
 			sourceTree = "<group>";
 		};
+		7865A841A3D9FE75E044B4E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71B300F94C146A7D532530B0 /* Pods_IntelliChef.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A969C73EEDC44364C3566AB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8ED6787A843D5D195D038FA3 /* Pods-IntelliChef.debug.xcconfig */,
+				AEEEAEEDB014C473F4F9C095 /* Pods-IntelliChef.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 043B5B301E4589E9007A6581 /* Build configuration list for PBXNativeTarget "IntelliChef" */;
 			buildPhases = (
+				6F804A9BEFD96ABD001212C7 /* [CP] Check Pods Manifest.lock */,
 				043B5B181E4589E8007A6581 /* Sources */,
 				043B5B191E4589E8007A6581 /* Frameworks */,
 				043B5B1A1E4589E8007A6581 /* Resources */,
+				843EF71F0634FE2EC15EE255 /* [CP] Embed Pods Frameworks */,
+				7BD432737ACBADC785593393 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F804A9BEFD96ABD001212C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7BD432737ACBADC785593393 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IntelliChef/Pods-IntelliChef-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		843EF71F0634FE2EC15EE255 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IntelliChef/Pods-IntelliChef-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		043B5B181E4589E8007A6581 /* Sources */ = {
@@ -257,6 +332,7 @@
 		};
 		043B5B311E4589E9007A6581 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ED6787A843D5D195D038FA3 /* Pods-IntelliChef.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -274,6 +350,7 @@
 		};
 		043B5B321E4589E9007A6581 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEEEAEEDB014C473F4F9C095 /* Pods-IntelliChef.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

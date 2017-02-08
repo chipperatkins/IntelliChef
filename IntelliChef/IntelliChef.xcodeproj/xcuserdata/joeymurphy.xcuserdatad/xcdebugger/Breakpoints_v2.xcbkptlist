@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IntelliChef/MasterViewController.swift"
-            timestampString = "507929103.457452"
+            timestampString = "508093296.682221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "updateSearchResults(for:)"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "tableView(_:willDisplay:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,12 +47,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IntelliChef/MasterViewController.swift"
-            timestampString = "507929103.457452"
+            timestampString = "508093296.682221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -63,12 +63,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IntelliChef/MasterViewController.swift"
-            timestampString = "507923529.632427"
+            timestampString = "508093296.682221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -143,12 +143,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IntelliChef/PageViewController.swift"
-            timestampString = "507931813.031292"
+            timestampString = "508004457.291267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "pageViewController(_:viewControllerBefore:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "actionLeft(pageContentViewController:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
